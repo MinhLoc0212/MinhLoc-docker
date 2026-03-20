@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | Đinh Hữu Minh Lộc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Outfit", "sans-serif"] },
+          colors: {
+            neon: { green: "#10b981", purple: "#8b5cf6" }
+          },
+          keyframes: {
+            fadeUp: {
+              "0%": { opacity: "0", transform: "translateY(18px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            },
+            softPulse: {
+              "0%, 100%": { opacity: "0.16", transform: "scale(1)" },
+              "50%": { opacity: "0.26", transform: "scale(1.08)" }
+            }
+          },
+          animation: {
+            "fade-up": "fadeUp 800ms ease-out forwards",
+            "soft-pulse": "softPulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #07070b;
+      background-image: radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.22) 0%, rgba(7, 7, 11, 0.9) 45%, #07070b 100%);
+      overflow-x: hidden;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 60px -28px rgba(0, 0, 0, 0.65);
+    }
+    .neon-ring {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 26px rgba(139, 92, 246, 0.22);
+    }
+    .neon-text-green {
+      text-shadow: 0 0 10px rgba(16, 185, 129, 0.45), 0 0 18px rgba(16, 185, 129, 0.22);
+    }
+    .neon-text-purple {
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.45), 0 0 18px rgba(139, 92, 246, 0.22);
+    }
+    .card {
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 22px 60px -26px rgba(0, 0, 0, 0.8);
+    }
+    .card.green:hover {
+      border-color: rgba(16, 185, 129, 0.34);
+      box-shadow: 0 22px 60px -26px rgba(16, 185, 129, 0.22);
+    }
+    .card.purple:hover {
+      border-color: rgba(139, 92, 246, 0.34);
+      box-shadow: 0 22px 60px -26px rgba(139, 92, 246, 0.22);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-white/90 antialiased px-4 py-10 flex items-center justify-center">
+  <div class="absolute -top-24 -left-24 w-[26rem] h-[26rem] rounded-full bg-neon-purple blur-[90px] opacity-20 animate-soft-pulse"></div>
+  <div class="absolute -bottom-24 -right-24 w-[26rem] h-[26rem] rounded-full bg-neon-green blur-[90px] opacity-20 animate-soft-pulse" style="animation-delay: 2s;"></div>
+
+  <main class="w-full max-w-3xl opacity-0 animate-fade-up">
+    <section class="glass neon-ring rounded-3xl p-7 sm:p-10">
+      <div class="grid gap-4 sm:gap-6">
+        <div class="flex items-center justify-center">
+          <div class="w-14 h-14 rounded-2xl grid place-items-center bg-white/5 border border-white/10">
+            <i class="fa-solid fa-user-astronaut text-2xl text-white/80"></i>
+          </div>
+        </div>
+
+        <div class="grid gap-3">
+          <div class="glass card purple rounded-2xl p-5">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl grid place-items-center bg-neon-purple/10 border border-neon-purple/20 shrink-0">
+                <i class="fa-solid fa-id-badge text-xl text-neon-purple"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-sm uppercase tracking-[0.2em] text-white/55">Họ tên</div>
+                <div class="mt-1 text-2xl sm:text-3xl font-semibold text-white">
+                  Đinh Hữu <span class="text-neon-green neon-text-green">Minh Lộc</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="glass card green rounded-2xl p-5 opacity-0 animate-fade-up" style="animation-delay: 120ms;">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl grid place-items-center bg-neon-green/10 border border-neon-green/20 shrink-0">
+                  <i class="fa-solid fa-hashtag text-xl text-neon-green"></i>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-sm uppercase tracking-[0.2em] text-white/55">Mã sinh viên</div>
+                  <div class="mt-1 text-xl font-semibold text-white">2280601801</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass card purple rounded-2xl p-5 opacity-0 animate-fade-up" style="animation-delay: 220ms;">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl grid place-items-center bg-neon-purple/10 border border-neon-purple/20 shrink-0">
+                  <i class="fa-solid fa-laptop-code text-xl text-neon-purple"></i>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-sm uppercase tracking-[0.2em] text-white/55">Chuyên ngành</div>
+                  <div class="mt-1 text-xl font-semibold text-white">Công nghệ thông tin</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-5 opacity-0 animate-fade-up" style="animation-delay: 320ms;">
+            <div class="text-sm uppercase tracking-[0.2em] text-white/55">Sở thích</div>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div class="glass card green rounded-2xl p-5">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl grid place-items-center bg-neon-green/10 border border-neon-green/20 shrink-0">
+                    <i class="fa-solid fa-gamepad text-xl text-neon-green"></i>
+                  </div>
+                  <div class="text-xl font-semibold text-white">Chơi game</div>
+                </div>
+              </div>
+              <div class="glass card purple rounded-2xl p-5">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl grid place-items-center bg-neon-purple/10 border border-neon-purple/20 shrink-0">
+                    <i class="fa-solid fa-headphones-simple text-xl text-neon-purple"></i>
+                  </div>
+                  <div class="text-xl font-semibold text-white">Nghe nhạc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-5 opacity-0 animate-fade-up" style="animation-delay: 420ms;">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <div class="min-w-0">
+                <div class="text-sm uppercase tracking-[0.2em] text-white/55">Lưu dữ liệu</div>
+                <div id="saveStatus" class="mt-1 text-sm text-white/60">Nhấn nút để lưu thông tin vào MySQL.</div>
+              </div>
+              <button id="saveBtn" type="button" onclick="saveProfile()" class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 font-semibold bg-neon-green/10 border border-neon-green/30 text-neon-green hover:bg-neon-green/15 hover:border-neon-green/50 transition active:scale-[0.99]">
+                <span id="saveBtnText">Lưu vào Database</span>
+                <span id="saveSpinner" class="hidden w-4 h-4 rounded-full border-2 border-neon-green/30 border-t-neon-green animate-spin"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    async function saveProfile() {
+      const btn = document.getElementById("saveBtn");
+      const btnText = document.getElementById("saveBtnText");
+      const spinner = document.getElementById("saveSpinner");
+      const status = document.getElementById("saveStatus");
+
+      const payload = {
+        fullName: "Đinh Hữu Minh Lộc",
+        studentId: "2280601801",
+        major: "Công nghệ thông tin",
+        interests: ["Chơi game", "Nghe nhạc"]
+      };
+
+      btn.disabled = true;
+      btn.classList.add("opacity-80");
+      btnText.textContent = "Đang lưu...";
+      spinner.classList.remove("hidden");
+      status.textContent = "Đang gửi dữ liệu lên server...";
+      status.className = "mt-1 text-sm text-white/60";
+
+      try {
+        const res = await fetch("/api/profile", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(text || `HTTP ${res.status}`);
+        }
+
+        const data = await res.json();
+        status.textContent = `Đã lưu thành công (ID: ${data.id}).`;
+        status.className = "mt-1 text-sm text-neon-green neon-text-green";
+      } catch (e) {
+        status.textContent = "Lưu thất bại. Hãy kiểm tra server Spring Boot và MySQL (Laragon).";
+        status.className = "mt-1 text-sm text-red-300";
+      } finally {
+        spinner.classList.add("hidden");
+        btnText.textContent = "Lưu vào Database";
+        btn.disabled = false;
+        btn.classList.remove("opacity-80");
+      }
+    }
+  </script>
+</body>
+</html>
