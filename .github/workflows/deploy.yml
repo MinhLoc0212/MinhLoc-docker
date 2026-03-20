@@ -27,4 +27,6 @@ jobs:
           context: .
           push: true
           # Thay 'minhloc0212' bằng username của bạn và 'spring-boot-app' bằng tên repo mong muốn
-          tags: ${{ secrets.DOCKER_USERNAME }}/spring-boot-app:latest
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/minhloc-docker:latest
+            ${{ secrets.DOCKER_USERNAME }}/minhloc-docker:v${{ github.run_number }}
